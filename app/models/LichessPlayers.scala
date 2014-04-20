@@ -3,7 +3,7 @@ package models
 import chessmap.Cache
 import com.google.common.cache.{ Cache ⇒ GuavaCache }
 
-final class LichessPlayers(aiLocations: Set[Location]) extends Cache {
+final class LichessPlayers extends Cache {
 
   // to each game ID, associate list of player Locations
   // there can be 0, 1 or 2 players per game ID,
@@ -30,12 +30,5 @@ final class LichessPlayers(aiLocations: Set[Location]) extends Cache {
 
       // both locations are known
       case List(l1, l2) if l2 == myLocation ⇒ Some(l1)
-
-      // this game has more than 2 locations ! Gasp.
-      // well this can happen when playing against the AI,
-      // as moves can be routed to different AI instances.
-      // return the non-AI location.
-      case List(l1, l2) if aiLocations(l1)  ⇒ Some(l2)
-      case List(l1, l2) if aiLocations(l2)  ⇒ Some(l1)
     }
 }

@@ -38,20 +38,3 @@ a {
 #stats {
   position: absolute;
 }
-
-#legend {
-  margin: 20px 0;
-}
-
-.dot {
-  font-size: 18px;
-  margin-right: 5px;
-}
-
-.human {
-  color: #fe7727;
-}
-
-.ia {
-  color: #be4701;
-}

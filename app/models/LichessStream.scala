@@ -20,9 +20,7 @@ object LichessStream extends Cache {
   val ipgeo = new IpGeo(dbFile = new File("conf/GeoLiteCity.dat"), memCache = false, lruCache = 0)
   val ipCache: LoadingCache[String, Option[IpLocation]] = cache(cacheSize, ipgeo.getLocation)
 
-  val aiIps: List[String] = current.configuration.underlying.getStringList("lichess.ai_ips").toList
-  val aiLocations: Set[Location] = (aiIps map ipCache.get).flatten.map(Location.apply).toSet
-  val players = new LichessPlayers(aiLocations)
+  val players = new LichessPlayers
 
   type OpponentLocation = Option[Location]
   type LocationPair = (Location, OpponentLocation)
@@ -62,8 +60,7 @@ object LichessStream extends Cache {
       "lat" -> myLocation.lat,
       "lon" -> myLocation.lon,
       "oLat" -> opponentLocation.map(_.lat),
-      "oLon" -> opponentLocation.map(_.lon),
-      "isIA" -> aiLocations(myLocation)
+      "oLon" -> opponentLocation.map(_.lon)
     )
   }
 

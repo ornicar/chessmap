@@ -1,6 +1,6 @@
 name := "chessmap"
 
-version := "1.0-SNAPSHOT"
+version := "1.1"
 
 resolvers ++= Seq(
   "SnowPlow Repo" at "http://maven.snplow.com/releases/",
@@ -12,8 +12,8 @@ libraryDependencies ++= Seq(
   anorm,
   cache,
   "com.snowplowanalytics"  %% "scala-maxmind-geoip"  % "0.0.5",
-  "com.google.guava" % "guava" % "15.0",
-  "com.google.code.findbugs" % "jsr305" % "2.0.1"
+  "com.google.guava" % "guava" % "16.0.1",
+  "com.google.code.findbugs" % "jsr305" % "2.0.3"
 )
 
 scalacOptions := Seq("-deprecation", "-unchecked", "-feature", "-language:_")

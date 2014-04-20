@@ -1,7 +1,5 @@
 var stats = {
     nMoves: 0,
-    humanMoves: 0,
-    iaMoves: 0,
     countries: {}
 };
 
@@ -43,7 +41,7 @@ $(function() {
             if (typeof density[densityKey] == 'undefined') density[densityKey] = 1;
             else density[densityKey]++;
             var dot = paper.circle().attr({
-                fill: data.isIA ? "#be4701" : "#FE7727",
+                fill: "#FE7727",
                 r: density[densityKey] + 2,
                 'stroke-width': 0
             });
@@ -67,11 +65,7 @@ $(function() {
 
             // moves
             stats.nMoves++;
-            if (data.isIA) stats.iaMoves++;
-            else stats.humanMoves++;
             $('#moves > span').text(stats.nMoves);
-            $('#humanMoves > span').text(stats.humanMoves);
-            $('#iaMoves > span').text(stats.iaMoves);
             // top countries
             if (data.country in stats.countries) stats.countries[data.country]++;
             else stats.countries[data.country] = 1;
