@@ -2,7 +2,7 @@ body {
   /* based on lichess dark theme */
   font:12px'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
   color: #909090;
-  background: #1a1a1a;
+  background: url("../images/bluegrid.jpg") center repeat;
 }
 
 h1 {
@@ -10,7 +10,7 @@ h1 {
   font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
   font-size: 30px;
   font-weight: normal;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 h1 a {
