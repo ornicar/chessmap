@@ -5,10 +5,6 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /stream                     controllers.Application.stream
-GET     /stub                       controllers.Application.stub
-GET     /infstub                    controllers.Application.infstub
-GET     /stubon                     controllers.Application.stubon
-GET     /stuboff                    controllers.Application.stuboff
 
 
 # Map static resources from the /public folder to the /assets URL path
