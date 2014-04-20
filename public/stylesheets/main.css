@@ -3,6 +3,7 @@ body {
   font:12px'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
   color: #909090;
   background: url("../images/bluegrid.jpg") center repeat;
+  margin-top: 50px;
 }
 
 h1 {
@@ -10,7 +11,7 @@ h1 {
   font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
   font-size: 30px;
   font-weight: normal;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 h1 a {
