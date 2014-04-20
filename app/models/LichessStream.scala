@@ -26,9 +26,10 @@ object LichessStream extends Cache {
   type LocationPair = (Location, OpponentLocation)
 
   val lineParser: Enumeratee[String, Option[Move]] = Enumeratee.map[String] { line ⇒
-    line.split("\\s") match {
-      case Array(id, move, ip) ⇒ Some(Move(id, move, ip))
-      case _                   ⇒ None
+    line.split(' ') match {
+      case Array(id, ip)    ⇒ Some(Move(id, ip))
+      case Array(id, _, ip) ⇒ Some(Move(id, ip))
+      case _                ⇒ None
     }
   }
 
@@ -79,9 +80,6 @@ object Location {
     Location(ipLoc.countryName, ipLoc.region, ipLoc.city, ipLoc.latitude, ipLoc.longitude)
 }
 
-case class Move(
-  gameId: String,
-  move: String,
-  ip: String)
+case class Move(gameId: String, ip: String)
 
 case class MoveWith[A](move: Move, value: A)
